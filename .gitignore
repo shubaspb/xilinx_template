@@ -1,0 +1,37 @@
+
+*
+!*/
+!.gitignore
+
+
+!*.vhd
+!*.v
+!*.vh
+!*.sv
+!*.bd
+!*.edif
+!*.ltx
+!*.xci
+!*.xcix
+!*.mem
+!*.xdc
+!*.tcl
+!*.sh
+
+/project/*
+/firmware/*
+
+
+#  *.bak
+#  /*.log
+#  /*.jou
+#  /*.str
+#  
+#  !*.xdc
+#  !*.xci
+#  
+#  !/src/ip/clk_wiz_0/clk_wiz_0.xci
+
+
+
+
