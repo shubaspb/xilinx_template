@@ -23,7 +23,7 @@ wait_on_run impl_1
 open_run impl_1
 report_timing -slack_lesser_than 0 -file project/report_time_violations.rpt
 report_clocks -file project/report_clock.rpt
-report_utilization -name utilization_1 -file project/report_utilization.rpt
+report_utilization -hierarchical -hierarchical_percentages -file project/report_utilization.rpt
 report_power_opt -file project/report_power_opt.rpt
 
 file copy -force project/project.runs/impl_1/${PROJECT_NAME}.bit firmware/${PROJECT_NAME}.bit
