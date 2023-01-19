@@ -32,6 +32,7 @@ IBUFDS IBUFDS_inst6 (.O(rx_d[4]),.I(rx_d_p[4]),.IB(rx_d_n[4]));
 IBUFDS IBUFDS_inst7 (.O(rx_d[5]),.I(rx_d_p[5]),.IB(rx_d_n[5]));
 
 wire fb_clk;
+assign fb_clk = f25clk;
 wire tx_frame;
 wire [5:0] tx_d;
 OBUFDS OBUFDS_inst0 (.I(fb_clk),.O(fb_clk_p),.OB(fb_clk_n));
@@ -54,10 +55,14 @@ clk_wiz_0 clk_wiz_0_inst0(
     .locked     (locked));
 
 
+
+wire [5:0] rx_d_int;
+assign rx_d_int = rx_d + {rx_d[2:0],rx_d[5:3]};
+
 delay_rg #(.W(6),.D(100)) delay_rg_inst0
    (.reset_b(locked),
     .clk    (clk),
-    .din    (rx_d),
+    .din    (rx_d_int),
     .dout   (tx_d));
 
 

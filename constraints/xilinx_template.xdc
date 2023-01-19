@@ -3,6 +3,10 @@ set_property BITSTREAM.CONFIG.CONFIGRATE 40 [current_design]
 #set_property PARAM.FREQUENCY 250000 [get_hw_targets */xilinx_tcf/Digilent/210203327962A] 
 #open_hw_target
 
+
+
+set_property -dict {PACKAGE_PIN U24 IOSTANDARD LVCMOS25} [get_ports {f25clk}]
+
 set_property -dict {PACKAGE_PIN AB27 IOSTANDARD LVDS_25 DIFF_TERM TRUE} [get_ports data_clk_p]
 set_property -dict {PACKAGE_PIN AC27 IOSTANDARD LVDS_25} [get_ports data_clk_n]
 set_property -dict {PACKAGE_PIN AG29 IOSTANDARD LVDS_25 DIFF_TERM TRUE} [get_ports rx_frame_p]
