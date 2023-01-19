@@ -38,9 +38,8 @@ set_property -dict {PACKAGE_PIN Y30  IOSTANDARD LVDS_25} [get_ports tx_d_p[0]]
 set_property -dict {PACKAGE_PIN AA30 IOSTANDARD LVDS_25} [get_ports tx_d_n[0]]
 
 
-create_clock -period 5 -name data_clk -waveform {0.000 2.500} [get_pins IBUFGDS_inst0/O]
-set_clock_groups -name data_clk -asynchronous -group [get_clocks [list data_clk]
-
+#create_clock -period 5 -name data_clk -waveform {0.000 2.500} [get_pins IBUFGDS_inst0/O]
+#set_clock_groups -name data_clk -asynchronous -group [get_clocks [list data_clk]
 
 
 

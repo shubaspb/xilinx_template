@@ -1,6 +1,7 @@
 set PROJECT_NAME xilinx_template
 set FPGA xc7k325tffg900-1
 set PROJECT_CONSTRAINT_FILE constraints/${PROJECT_NAME}.xdc
+set TIMING_CONSTRAINTS_FILE constraints/timing_constraints.xdc
 set DIR_LIB src
 
 create_project project project -part ${FPGA} 
@@ -10,6 +11,8 @@ add_files -fileset sources_1 ${DIR_LIB}/delay_rg.v
 add_files -fileset sources_1 ${DIR_LIB}/ip/clk_wiz_0/clk_wiz_0.xci
 
 add_files -fileset constrs_1 -norecurse ${PROJECT_CONSTRAINT_FILE}
+
+read_xdc ${TIMING_CONSTRAINTS_FILE}
 
 #create_fileset -constrset ${PROJECT_CONSTRAINT_FILE}
 #set_property target_constrs_file ${PROJECT_CONSTRAINT_FILE} [current_fileset -constrset]
